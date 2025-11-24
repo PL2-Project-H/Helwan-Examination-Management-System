@@ -35,7 +35,10 @@
 - Let students request grade reevaluation
 - Feedback System (Student)
 - Submit feedback about exams and exam experience
-
+---
+## Naming Conventions
+- **Functions**: Use PascalCase (`GetUsersExample()`).  
+---
 ##File Structure
 ---
 ```bash
