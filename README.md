@@ -35,3 +35,67 @@
 - Let students request grade reevaluation
 - Feedback System (Student)
 - Submit feedback about exams and exam experience
+
+##File Structure
+---
+```bash
+CollegeExamManagementSystem/
+│
+├─ src/
+│   ├─ main/
+│   │   ├─ java/
+│   │   │   ├─ admin/            
+│   │   │   │    ├─ Admin.java
+│   │   │   │    ├─ UserManagement.java
+│   │   │   │    ├─ SubjectManagement.java
+│   │   │   │    └─ GradeApproval.java
+│   │   │   │
+│   │   │   ├─ lecturer/          
+│   │   │   │    ├─ Lecturer.java
+│   │   │   │    ├─ ExamManagement.java
+│   │   │   │    └─ Reporting.java
+│   │   │   │
+│   │   │   ├─ student/          
+│   │   │   │    ├─ Student.java
+│   │   │   │    ├─ ExamAccess.java
+│   │   │   │    └─ Feedback.java
+│   │   │   │
+│   │   │   ├─ user/             
+│   │   │   │    ├─ User.java
+│   │   │   │    ├─ Authentication.java
+│   │   │   │    └─ UpdateProfile.java
+│   │   │   │
+│   │   │   ├─ util/              
+│   │   │   │    ├─ FileHandler.java   
+│   │   │   │    └─Validator.java     
+│   │   │   │          
+│   │   │   │
+│   │   │   └─ Main.java           
+│   │   │
+│   │   └─ resources/
+│   │        ├─ fxml/             
+│   │        │    ├─ Login.fxml
+│   │        │    ├─ AdminDashboard.fxml
+│   │        │    ├─ LecturerDashboard.fxml
+│   │        │    └─ StudentDashboard.fxml
+│   │        │
+│   │        └─ styles/           
+│   │             └─ style.css
+│   │
+│   └─ test/                     
+│
+├─ data/                          
+│    ├─ users.txt
+│    ├─ students.txt
+│    ├─ lecturers.txt
+│    ├─ subjects.txt
+│    ├─ exams.txt
+│    ├─ grades.txt
+│    └─ feedback.txt
+│
+├─ docs/ 
+│
+├─ .gitignore
+├─ README.md
+└─ build.gradle / pom.xml  
+```
