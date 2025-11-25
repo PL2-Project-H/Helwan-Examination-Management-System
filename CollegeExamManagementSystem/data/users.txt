@@ -1,0 +1,3 @@
+1,admin,admin,ADMIN
+2,lecturer1,password,LECTURER
+3,student1,password,STUDENT
