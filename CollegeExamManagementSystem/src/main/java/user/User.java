@@ -5,7 +5,7 @@ class User {
     protected String name;
     protected String id;
     protected String pass;
-    public User (String name, String id, String pass) {
+    public User (String id, String name, String pass) {
         this.name = name;
         this.pass = pass;
         this.id = id;
