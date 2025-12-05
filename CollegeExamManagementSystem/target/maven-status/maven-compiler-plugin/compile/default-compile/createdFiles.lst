@@ -1,9 +1,11 @@
 admin/Admin.class
 util/Validator.class
+user/Authentication.class
 util/FileHandler.class
 admin/Subject.class
 user/User.class
 user/User$Role.class
 Main.class
+user/Authentication$1.class
 admin/UserManagement.class
 admin/SubjectManagement.class
