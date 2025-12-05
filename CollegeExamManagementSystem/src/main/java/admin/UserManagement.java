@@ -1,6 +1,7 @@
-package Admin;
+package admin;
 import java.io.*;
 import java.util.*;
+import user.User;
 
 public class UserManagement{
     private static final File FILE = new File("../data/users.txt");
