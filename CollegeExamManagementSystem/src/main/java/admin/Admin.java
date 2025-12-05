@@ -1,9 +1,10 @@
-package UserManagement;
+package admin;
+import user.User;
 
 public class Admin extends User {
 
-    protected Admin (String name, String id, String pass) {
-        super(name,id,pass);
+    public Admin(String name, String id, String pass) {
+        super(id, name, pass, Role.ADMIN); 
     }
     public void setName(String name) {
         this.name = name;
@@ -15,3 +16,4 @@ public class Admin extends User {
         this.pass = pass;
     }
 }
+
