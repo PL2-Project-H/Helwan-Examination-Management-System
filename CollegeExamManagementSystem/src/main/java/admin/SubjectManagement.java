@@ -1,4 +1,4 @@
-package Admin;
+package admin;
 import java.io.*;
 import java.util.*;
 
@@ -32,7 +32,7 @@ public class SubjectManagement {
         try {
             PrintWriter pw = new PrintWriter(FILE);
             for (Subject s : subjects) {
-                pw.println(s.code + "," + u.name);
+                pw.println(s.code + "," + s.name);
             }
             pw.close();
         } catch (Exception e) {
@@ -53,7 +53,7 @@ public class SubjectManagement {
         boolean removed = false;
         for (int i = 0; i < subjects.size(); i++) {
             Subject s = subjects.get(i);
-            if (u.GetCode().equals(code)) {
+            if (s.GetCode().equals(code)) {
                 subjects.remove(i);  
                 removed = true;
                 break;            

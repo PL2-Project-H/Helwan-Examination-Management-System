@@ -19,35 +19,35 @@ public class User {
         this.role = role;
     }
 
-    public String getId() {
+    public String GetId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void SetId(String id) {
         this.id = id;
     }
 
-    public String getName() {
+    public String GetName() {
         return name;
     }
 
-    public void setName(String username) {
+    public void SetName(String name) {
         this.name = name;
     }
 
-    public String getPass() {
+    public String SetPass() {
         return pass;
     }
 
-    public void setPass(String password) {
+    public void SetPass(String pass) {
         this.pass = pass;
     }
 
-    public Role getRole() {
+    public Role GetRole() {
         return role;
     }
 
-    public void setRole(Role role) {
+    public void SetRole(Role role) {
         this.role = role;
     }
 }

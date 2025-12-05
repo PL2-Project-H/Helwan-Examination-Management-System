@@ -66,7 +66,7 @@ public class Authentication {
     private void loadDashboard(User user) {
             String fxmlPath = "";
             String title = "";
-            switch (user.getRole()) {
+            switch (user.GetRole()) {
                 case ADMIN:
                     fxmlPath = "/fxml/AdminDashboard.fxml";
                     title = "Admin Dashboard";
