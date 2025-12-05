@@ -28,25 +28,33 @@ public class Authentication {
 
     @FXML
     private void handleLogin() {
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+    String username = usernameField.getText();
+    String password = passwordField.getText();
 
-        if (!Validator.isValidUsername(username) || !Validator.isValidPassword(password)) {
-            showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password format.");
-            return;
-        }
-
-        User authenticatedUser = authenticate(username, password);
-
-        if (authenticatedUser != null) {
-            loadDashboard(authenticatedUser);
-        } else {
-            showAlert(Alert.AlertType.ERROR, "Login Failed", "Incorrect username or password.");
-        }
+    if (!Validator.isValidUsername(username) || !Validator.isValidPassword(password)) {
+        showAlert(Alert.AlertType.ERROR, "Login Failed", "Invalid username or password format.");
+        return;
     }
 
+    User authenticatedUser = authenticate(username, password);
+
+    if (authenticatedUser != null) {
+        try {
+            loadDashboard(authenticatedUser);
+        } catch (IOException e) {
+            e.printStackTrace();
+            showAlert(Alert.AlertType.ERROR, "Error", "Unable to load dashboard.");
+        }
+    } else {
+        showAlert(Alert.AlertType.ERROR, "Login Failed", "Incorrect username or password.");
+    }
+}
+
+
     private User authenticate(String username, String password) {
+    try {
         List<String> userLines = FileHandler.readAllLines("users.txt");
+
         for (String line : userLines) {
             String[] parts = line.split(",");
             if (parts.length == 4) {
@@ -60,37 +68,44 @@ public class Authentication {
                 }
             }
         }
-        return null;
+    } catch (IOException e) {
+        e.printStackTrace();
+        showAlert(Alert.AlertType.ERROR, "Error", "Failed to read users file.");
     }
 
-    private void loadDashboard(User user) {
-            String fxmlPath = "";
-            String title = "";
-            switch (user.GetRole()) {
-                case ADMIN:
-                    fxmlPath = "/fxml/AdminDashboard.fxml";
-                    title = "Admin Dashboard";
-                    break;
-                case LECTURER:
-                    fxmlPath = "/fxml/LecturerDashboard.fxml";
-                    title = "Lecturer Dashboard";
-                    break;
-                case STUDENT:
-                    fxmlPath = "/fxml/StudentDashboard.fxml";
-                    title = "Student Dashboard";
-                    break;
-            }
-
-            URL fxmlUrl = getClass().getResource(fxmlPath);
-            FXMLLoader loader = new FXMLLoader(fxmlUrl);
-            Parent dashboardRoot = loader.load();
-
-            Stage stage = (Stage) loginButton.getScene().getWindow();
-            Scene scene = new Scene(dashboardRoot, 1000, 700); // Larger size for dashboards
-            stage.setTitle(title);
-            stage.setScene(scene);
-        
+    return null;
     }
+
+
+    private void loadDashboard(User user) throws IOException {
+    String fxmlPath = "";
+    String title = "";
+
+    switch (user.GetRole()) {
+        case ADMIN:
+            fxmlPath = "/fxml/AdminDashboard.fxml";
+            title = "Admin Dashboard";
+            break;
+        case LECTURER:
+            fxmlPath = "/fxml/LecturerDashboard.fxml";
+            title = "Lecturer Dashboard";
+            break;
+        case STUDENT:
+            fxmlPath = "/fxml/StudentDashboard.fxml";
+            title = "Student Dashboard";
+            break;
+    }
+
+    URL fxmlUrl = getClass().getResource(fxmlPath);
+    FXMLLoader loader = new FXMLLoader(fxmlUrl);
+    Parent dashboardRoot = loader.load();  // <-- Throws IOException
+
+    Stage stage = (Stage) loginButton.getScene().getWindow();
+    Scene scene = new Scene(dashboardRoot, 1000, 700);
+    stage.setTitle(title);
+    stage.setScene(scene);
+ }
+
 
     private void showAlert(Alert.AlertType type, String title, String message) {
         Alert alert = new Alert(type);
