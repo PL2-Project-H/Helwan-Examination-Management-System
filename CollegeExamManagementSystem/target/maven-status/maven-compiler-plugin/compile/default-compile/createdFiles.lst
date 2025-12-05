@@ -6,6 +6,7 @@ admin/Subject.class
 user/User.class
 user/User$Role.class
 Main.class
+student/Student.class
 user/Authentication$1.class
 admin/UserManagement.class
 admin/SubjectManagement.class

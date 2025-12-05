@@ -83,15 +83,15 @@ public class Authentication {
 
     switch (user.GetRole()) {
         case ADMIN:
-            fxmlPath = "/fxml/AdminDashboard.fxml";
+            fxmlPath = "../fxml/AdminDashboard.fxml";
             title = "Admin Dashboard";
             break;
         case LECTURER:
-            fxmlPath = "/fxml/LecturerDashboard.fxml";
+            fxmlPath = "../fxml/LecturerDashboard.fxml";
             title = "Lecturer Dashboard";
             break;
         case STUDENT:
-            fxmlPath = "/fxml/StudentDashboard.fxml";
+            fxmlPath = "../fxml/StudentDashboard.fxml";
             title = "Student Dashboard";
             break;
     }
