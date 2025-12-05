@@ -1,0 +1,3 @@
+CS101,Computer Science
+MTH,Math
+IS101,Information Systems
