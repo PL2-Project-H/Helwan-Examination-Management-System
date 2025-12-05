@@ -1,7 +1,9 @@
 admin/Admin.class
-Main.class
 util/Validator.class
 util/FileHandler.class
-admin/UserManagement.class
+admin/Subject.class
 user/User.class
 user/User$Role.class
+Main.class
+admin/UserManagement.class
+admin/SubjectManagement.class
