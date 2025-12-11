@@ -42,63 +42,84 @@
 ##File Structure
 ---
 ```bash
-CollegeExamManagementSystem/
-│
-├─ src/
-│   ├─ main/
-│   │   ├─ java/
-│   │   │   ├─ admin/            
-│   │   │   │    ├─ Admin.java
-│   │   │   │    ├─ UserManagement.java
-│   │   │   │    ├─ SubjectManagement.java
-│   │   │   │    └─ GradeApproval.java
-│   │   │   │
-│   │   │   ├─ lecturer/          
-│   │   │   │    ├─ Lecturer.java
-│   │   │   │    ├─ ExamManagement.java
-│   │   │   │    └─ Reporting.java
-│   │   │   │
-│   │   │   ├─ student/          
-│   │   │   │    ├─ Student.java
-│   │   │   │    ├─ ExamAccess.java
-│   │   │   │    └─ Feedback.java
-│   │   │   │
-│   │   │   ├─ user/             
-│   │   │   │    ├─ User.java
-│   │   │   │    ├─ Authentication.java
-│   │   │   │    └─ UpdateProfile.java
-│   │   │   │
-│   │   │   ├─ util/              
-│   │   │   │    ├─ FileHandler.java   
-│   │   │   │    └─Validator.java     
-│   │   │   │          
-│   │   │   │
-│   │   │   └─ Main.java           
-│   │   │
-│   │   └─ resources/
-│   │        ├─ fxml/             
-│   │        │    ├─ Login.fxml
-│   │        │    ├─ AdminDashboard.fxml
-│   │        │    ├─ LecturerDashboard.fxml
-│   │        │    └─ StudentDashboard.fxml
-│   │        │
-│   │        └─ styles/           
-│   │             └─ style.css
-│   │
-│   └─ test/                     
-│
-├─ data/                          
-│    ├─ users.txt
-│    ├─ students.txt
-│    ├─ lecturers.txt
-│    ├─ subjects.txt
-│    ├─ exams.txt
-│    ├─ grades.txt
-│    └─ feedback.txt
-│
-├─ docs/ 
-│
-├─ .gitignore
-├─ README.md
-└─ build.gradle / pom.xml  
+CollegeExamManagementSystem
+├── build.gradle
+├── data
+│   ├── exams.txt
+│   ├── feedback.txt
+│   ├── grades.txt
+│   ├── lecturers.txt
+│   ├── students.txt
+│   ├── subjects.txt
+│   └── users.txt
+├── docs
+├── pom.xml
+├── README.md
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── admin
+│   │   │   │   ├── Admin.java
+│   │   │   │   ├── GradeApproval.java
+│   │   │   │   ├── Subject.java
+│   │   │   │   ├── SubjectManagement.java
+│   │   │   │   └── UserManagement.java
+│   │   │   ├── lecturer
+│   │   │   │   ├── ExamManagement.java
+│   │   │   │   ├── Lecturer.java
+│   │   │   │   └── Reporting.java
+│   │   │   ├── Main.java
+│   │   │   ├── student
+│   │   │   │   ├── ExamAccess.java
+│   │   │   │   ├── Feedback.java
+│   │   │   │   └── Student.java
+│   │   │   ├── user
+│   │   │   │   ├── Authentication.java
+│   │   │   │   ├── UpdateProfile.java
+│   │   │   │   └── User.java
+│   │   │   └── util
+│   │   │       ├── FileHandler.java
+│   │   │       └── Validator.java
+│   │   └── resources
+│   │       ├── fxml
+│   │       │   ├── AdminDashboard.fxml
+│   │       │   ├── LecturerDashboard.fxml
+│   │       │   ├── Login.fxml
+│   │       │   └── StudentDashboard.fxml
+│   │       └── styles
+│   │           └── style.css
+│   └── test
+└── target
+    ├── classes
+    │   ├── admin
+    │   │   ├── Admin.class
+    │   │   ├── Subject.class
+    │   │   ├── SubjectManagement.class
+    │   │   └── UserManagement.class
+    │   ├── fxml
+    │   │   ├── AdminDashboard.fxml
+    │   │   ├── LecturerDashboard.fxml
+    │   │   ├── Login.fxml
+    │   │   └── StudentDashboard.fxml
+    │   ├── Main.class
+    │   ├── student
+    │   │   └── Student.class
+    │   ├── styles
+    │   │   └── style.css
+    │   ├── user
+    │   │   ├── Authentication$1.class
+    │   │   ├── Authentication.class
+    │   │   ├── User$Role.class
+    │   │   └── User.class
+    │   └── util
+    │       ├── FileHandler.class
+    │       └── Validator.class
+    ├── generated-sources
+    │   └── annotations
+    └── maven-status
+        └── maven-compiler-plugin
+            └── compile
+                └── default-compile
+                    ├── createdFiles.lst
+                    └── inputFiles.lst  
 ```
