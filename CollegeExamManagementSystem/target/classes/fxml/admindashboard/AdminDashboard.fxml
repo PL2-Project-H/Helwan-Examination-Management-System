@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" 
+            fx:controller="admin.Admin"
+            stylesheets="@../styles/style.css, @../styles/AdminDashboard.css"
+            prefHeight="600.0" prefWidth="900.0">
+    
+    <!-- Header -->
+    <top>
+        <HBox styleClass="header" alignment="CENTER_LEFT" spacing="10">
+            <padding>
+                <Insets top="15" right="20" bottom="15" left="20"/>
+            </padding>
+            <Label text="Admin Dashboard" styleClass="header-title">
+                <font>
+                    <Font name="System Bold" size="24"/>
+                </font>
+            </Label>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Admin" styleClass="user-label"/>
+            <Button text="Logout" styleClass="logout-btn"/>
+        </HBox>
+    </top>
+        <!-- Sidebar Navigation -->
+    <left>
+        <VBox styleClass="sidebar" spacing="5" prefWidth="200">
+            <padding>
+                <Insets top="20" right="10" bottom="20" left="10"/>
+            </padding>
+            
+            <Label text="tabs" styleClass="sidebar-header">
+                <font>
+                    <Font size="14" name="System Bold"/>
+                </font>
+            </Label>
+            
+            <Button text="User Management" styleClass="nav-btn active" maxWidth="Infinity"/>
+            <Button text="Subject Management" styleClass="nav-btn" maxWidth="Infinity"/>
+            <Button text="Grade Approval" styleClass="nav-btn" maxWidth="Infinity"/>
+        </VBox>
+    </left>
+        <!-- Main Content Area -->
+    <center>
+        <VBox styleClass="content-area" spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+            
+            <Label text="options" styleClass="section-header">
+                <font>
+                    <Font size="16" name="System Bold"/>
+                </font>
+            </Label>
+                <!-- Options List -->
+            <VBox spacing="10" styleClass="options-container">
+                <HBox styleClass="option-item" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Add new user" HBox.hgrow="ALWAYS"/>
+                    <Button text="Go" styleClass="action-btn"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <HBox styleClass="option-item" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="View all users" HBox.hgrow="ALWAYS"/>
+                    <Button text="Go" styleClass="action-btn"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <HBox styleClass="option-item" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Edit user information" HBox.hgrow="ALWAYS"/>
+                    <Button text="Go" styleClass="action-btn"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <HBox styleClass="option-item" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Delete user" HBox.hgrow="ALWAYS"/>
+                    <Button text="Go" styleClass="action-btn"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <HBox styleClass="option-item" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="Generate reports" HBox.hgrow="ALWAYS"/>
+                    <Button text="Go" styleClass="action-btn"/>
+                </HBox>
+                
+                <Separator/>
+                
+                <HBox styleClass="option-item" alignment="CENTER_LEFT" spacing="10">
+                    <Label text="System settings" HBox.hgrow="ALWAYS"/>
+                    <Button text="Go" styleClass="action-btn"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+
+</BorderPane>
