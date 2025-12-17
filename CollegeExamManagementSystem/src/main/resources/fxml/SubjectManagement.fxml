@@ -16,5 +16,7 @@
         <Button text="Add Subject" onAction="#handleAddSubject" />
         <Button text="Edit Subject" onAction="#handleEditSubject" />
         <Button text="Delete Subject" onAction="#handleDeleteSubject" />
+        <Button text="Assign to Students" onAction="#handleAssignToStudents" />
+        <Button text="Assign to Lecturers" onAction="#handleAssignToLecturers" />
     </children>
 </VBox>

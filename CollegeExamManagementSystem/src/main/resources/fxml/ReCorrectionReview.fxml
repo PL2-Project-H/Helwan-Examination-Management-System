@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.ReCorrectionReviewController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <children>
+        <Label text="Re-Correction Requests Review">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="infoLabel" text="Loading requests..." />
+        <TableView fx:id="requestsTable" VBox.vgrow="ALWAYS" prefHeight="300.0">
+            <columns>
+                <TableColumn fx:id="requestIdColumn" text="ID" prefWidth="50.0" />
+                <TableColumn fx:id="studentNameColumn" text="Student" prefWidth="120.0" />
+                <TableColumn fx:id="examTitleColumn" text="Exam" prefWidth="150.0" />
+                <TableColumn fx:id="scoreColumn" text="Score %" prefWidth="80.0" />
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100.0" />
+                <TableColumn fx:id="timestampColumn" text="Submitted" prefWidth="150.0" />
+            </columns>
+        </TableView>
+        <TextArea fx:id="reasonTextArea" editable="false" prefRowCount="3" promptText="Select a request to see the reason..." />
+        <HBox spacing="10">
+            <children>
+                <Button text="Approve" onAction="#handleApprove" />
+                <Button text="Reject" onAction="#handleReject" />
+                <Button text="Refresh" onAction="#handleRefresh" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

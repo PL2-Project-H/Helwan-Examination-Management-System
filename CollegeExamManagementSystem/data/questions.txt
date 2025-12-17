@@ -1,1 +1,7 @@
 1,1,TrueFalse|are you here?|false
+2,2,TrueFalse|asd|true
+3,2,MultipleChoice|wwwwwww|option1;option2;option3|0
+4,3,TrueFalse|kkkkkk|true
+5,3,TrueFalse|llllllllll|true
+6,4,MultipleChoice|sssssss|222;asd;a|0
+7,4,TrueFalse|sssss|false

@@ -31,6 +31,9 @@
             <Button mnemonicParsing="false" onAction="#handleUserManagement" prefWidth="180.0" text="User Management" />
             <Button mnemonicParsing="false" onAction="#handleSubjectManagement" prefWidth="180.0" text="Subject Management" />
             <Button mnemonicParsing="false" onAction="#handleGradeApproval" prefWidth="180.0" text="Grade Approval" />
+            <Button mnemonicParsing="false" onAction="#handleReCorrectionReview" prefWidth="180.0" text="Re-Correction Review" />
+            <Button mnemonicParsing="false" onAction="#handleViewFeedback" prefWidth="180.0" text="View Feedback" />
+            <Button mnemonicParsing="false" onAction="#handleUpdateProfile" prefWidth="180.0" text="Update Profile" />
             <Button mnemonicParsing="false" onAction="#handleLogout" prefWidth="180.0" text="Logout" />
          </children>
       </VBox>

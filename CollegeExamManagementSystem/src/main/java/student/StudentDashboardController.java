@@ -40,11 +40,50 @@ public class StudentDashboardController {
     }
 
     @FXML
+    private void handleViewResults() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ResultView.fxml"));
+            Parent root = loader.load();
+            ResultViewController controller = loader.getController();
+            controller.setUser(user);
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleReCorrection() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ReCorrectionRequest.fxml"));
+            Parent root = loader.load();
+            ReCorrectionController controller = loader.getController();
+            controller.setUser(user);
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleFeedback() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Feedback.fxml"));
             Parent root = loader.load();
             FeedbackController controller = loader.getController();
+            controller.setUser(user);
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleUpdateProfile() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/UpdateProfile.fxml"));
+            Parent root = loader.load();
+            user.UpdateProfileController controller = loader.getController();
             controller.setUser(user);
             contentArea.getChildren().setAll(root);
         } catch (IOException e) {

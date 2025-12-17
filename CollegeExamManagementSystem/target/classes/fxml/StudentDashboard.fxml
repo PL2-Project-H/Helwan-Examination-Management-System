@@ -29,7 +29,10 @@
          </padding>
          <children>
             <Button mnemonicParsing="false" onAction="#handleExamAccess" prefWidth="180.0" text="Exam Access" />
+            <Button mnemonicParsing="false" onAction="#handleViewResults" prefWidth="180.0" text="View Results" />
+            <Button mnemonicParsing="false" onAction="#handleReCorrection" prefWidth="180.0" text="Re-Correction Request" />
             <Button mnemonicParsing="false" onAction="#handleFeedback" prefWidth="180.0" text="Feedback" />
+            <Button mnemonicParsing="false" onAction="#handleUpdateProfile" prefWidth="180.0" text="Update Profile" />
             <Button mnemonicParsing="false" onAction="#handleLogout" prefWidth="180.0" text="Logout" />
          </children>
       </VBox>

@@ -54,4 +54,10 @@ public class Grade {
     public void setApproved(boolean approved) {
         isApproved = approved;
     }
+
+    @Override
+    public String toString() {
+        return String.format("Exam ID: %s - Score: %.2f%s", 
+            examId, score, isApproved ? " (Approved)" : " (Pending)");
+    }
 }

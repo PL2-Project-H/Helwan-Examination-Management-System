@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox spacing="10" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="student.ReCorrectionController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+    <children>
+        <Label text="Re-Correction Requests">
+            <font>
+                <Font name="System Bold" size="18.0" />
+            </font>
+        </Label>
+        <Label fx:id="infoLabel" text="Loading requests..." />
+        <Button fx:id="submitRequestButton" text="Submit New Request" onAction="#handleSubmitRequest" />
+        <TableView fx:id="requestsTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="examTitleColumn" text="Exam" prefWidth="200.0" />
+                <TableColumn fx:id="scoreColumn" text="Score %" prefWidth="100.0" />
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100.0" />
+                <TableColumn fx:id="timestampColumn" text="Submitted" prefWidth="150.0" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>

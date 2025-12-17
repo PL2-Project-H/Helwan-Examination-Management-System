@@ -24,4 +24,9 @@ public class Subject {
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
     }
+
+    @Override
+    public String toString() {
+        return subjectName;
+    }
 }

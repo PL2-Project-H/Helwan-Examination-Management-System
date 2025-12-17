@@ -60,6 +60,41 @@ public class AdminDashboardController {
     }
 
     @FXML
+    private void handleReCorrectionReview() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/ReCorrectionReview.fxml"));
+            Parent root = loader.load();
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleViewFeedback() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/FeedbackView.fxml"));
+            Parent root = loader.load();
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
+    private void handleUpdateProfile() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/UpdateProfile.fxml"));
+            Parent root = loader.load();
+            user.UpdateProfileController controller = loader.getController();
+            controller.setUser(user);
+            contentArea.getChildren().setAll(root);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @FXML
     private void handleLogout() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/Login.fxml"));

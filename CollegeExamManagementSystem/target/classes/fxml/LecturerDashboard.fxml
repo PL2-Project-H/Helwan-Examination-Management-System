@@ -30,6 +30,7 @@
          <children>
             <Button mnemonicParsing="false" onAction="#handleExamManagement" prefWidth="180.0" text="Exam Management" />
             <Button mnemonicParsing="false" onAction="#handleReporting" prefWidth="180.0" text="Reporting Tools" />
+            <Button mnemonicParsing="false" onAction="#handleUpdateProfile" prefWidth="180.0" text="Update Profile" />
             <Button mnemonicParsing="false" onAction="#handleLogout" prefWidth="180.0" text="Logout" />
          </children>
       </VBox>
