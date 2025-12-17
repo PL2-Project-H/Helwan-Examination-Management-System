@@ -19,7 +19,7 @@ public class ExamAccess {
 
     private static final String STUDENT_ATTEMPTS_FILE = "student_attempts.txt";
     private static final String STUDENT_ANSWERS_FILE = "student_answers.txt";
-    private static final String GRADES_FILE = "grades.txt"; // For checking if graded
+    private static final String GRADES_FILE = "grades.txt";
 
     private ExamManagement examManagement;
     private SubjectManagement subjectManagement;
@@ -58,7 +58,7 @@ public class ExamAccess {
         for (Map.Entry<String, String> entry : answers.entrySet()) {
             linesToAppend.add(String.join(",", studentId, examId, entry.getKey(), entry.getValue()));
         }
-        FileHandler.writeAllLines(STUDENT_ANSWERS_FILE, linesToAppend); // Overwrite for simplicity, or append carefully
+        FileHandler.writeAllLines(STUDENT_ANSWERS_FILE, linesToAppend);
     }
 
     public Map<String, String> getStudentAnswers(String studentId, String examId) {

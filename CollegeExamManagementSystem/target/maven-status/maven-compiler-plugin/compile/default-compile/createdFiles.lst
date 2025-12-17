@@ -8,10 +8,10 @@ model/MultipleChoiceQuestion.class
 model/TrueFalseQuestion.class
 lecturer/Reporting$GradeReportEntry.class
 admin/SubjectManagementController.class
-student/ExamAccess.class
 admin/AdminDashboardController.class
 user/User.class
 user/User$Role.class
+student/ExamAccess.class
 lecturer/Lecturer.class
 student/Student.class
 model/Grade.class
@@ -24,8 +24,8 @@ student/FeedbackController.class
 user/UpdateProfile.class
 Main.class
 lecturer/ExamManagement.class
-student/Feedback.class
 lecturer/Reporting.class
+student/Feedback.class
 user/Authentication$1.class
 student/ExamViewController.class
 admin/SubjectManagement.class

@@ -6,7 +6,6 @@ import util.FileHandler;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 public class UserManagement {
 
@@ -72,6 +71,17 @@ public class UserManagement {
             }
         }
         saveUsers(users);
+    }
+    public User searchById(String userId) {
+        List<User> users = getAllUsers();
+
+        for (User user : users) {
+            if (user.getId().equals(userId)) {
+                return user;
+            }
+        }
+
+        return null; 
     }
 
     public void deleteUser(String userId) {

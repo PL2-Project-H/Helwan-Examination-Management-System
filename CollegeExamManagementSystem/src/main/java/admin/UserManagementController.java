@@ -26,6 +26,9 @@ public class UserManagementController {
     private TableColumn<User, String> usernameColumn;
 
     @FXML
+    private TableColumn<User, String> passwordColumn;
+
+    @FXML
     private TableColumn<User, User.Role> roleColumn;
 
     private UserManagement userManagement;
@@ -34,6 +37,7 @@ public class UserManagementController {
         userManagement = new UserManagement();
         idColumn.setCellValueFactory(new PropertyValueFactory<>("id"));
         usernameColumn.setCellValueFactory(new PropertyValueFactory<>("username"));
+        passwordColumn.setCellValueFactory(new PropertyValueFactory<>("password"));
         roleColumn.setCellValueFactory(new PropertyValueFactory<>("role"));
         loadUsers();
     }
@@ -70,9 +74,12 @@ public class UserManagementController {
         User selectedUser = usersTable.getSelectionModel().getSelectedItem();
         if (selectedUser != null) {
             TextInputDialog usernameDialog = new TextInputDialog(selectedUser.getUsername());
+            TextInputDialog passwordDialog = new TextInputDialog(selectedUser.getPassword());
             usernameDialog.setTitle("Edit User");
             usernameDialog.setHeaderText("Enter Username");
+            passwordDialog.setHeaderText("Enter Password");
             Optional<String> usernameResult = usernameDialog.showAndWait();
+            Optional<String> passwordResult = passwordDialog.showAndWait();
 
             if (usernameResult.isPresent() && !usernameResult.get().isEmpty()) {
                 List<User.Role> roles = Arrays.stream(User.Role.values()).collect(Collectors.toList());
@@ -84,6 +91,7 @@ public class UserManagementController {
                 if (roleResult.isPresent()) {
                     selectedUser.setUsername(usernameResult.get());
                     selectedUser.setRole(roleResult.get());
+                    selectedUser.setPassword(passwordResult.get());
                     userManagement.updateUser(selectedUser);
                     loadUsers();
                 }
@@ -99,4 +107,22 @@ public class UserManagementController {
             loadUsers();
         }
     }
+    @FXML
+        private void handleSearchUser() {
+        TextInputDialog dialog = new TextInputDialog();
+        dialog.setTitle("Search User");
+        dialog.setHeaderText("Enter User ID");
+        Optional<String> result = dialog.showAndWait();
+
+        if (result.isPresent() && !result.get().isEmpty()) {
+            User user = userManagement.searchById(result.get());
+
+            if (user != null) {
+
+                ObservableList<User> singleUser = FXCollections.observableArrayList(user);
+                usersTable.setItems(singleUser);
+            } else 
+                System.out.println("User not found!");
+            }
+        }
 }

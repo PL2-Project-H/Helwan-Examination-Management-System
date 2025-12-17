@@ -11,11 +11,13 @@
             <columns>
                 <TableColumn fx:id="idColumn" text="ID" />
                 <TableColumn fx:id="usernameColumn" text="Username" />
+                <TableColumn fx:id="passwordColumn" text="Password" />
                 <TableColumn fx:id="roleColumn" text="Role" />
             </columns>
         </TableView>
         <Button text="Add User" onAction="#handleAddUser" />
         <Button text="Edit User" onAction="#handleEditUser" />
         <Button text="Delete User" onAction="#handleDeleteUser" />
+        <Button text="Search for User" onAction="#handleSearchUser" />
     </children>
 </VBox>

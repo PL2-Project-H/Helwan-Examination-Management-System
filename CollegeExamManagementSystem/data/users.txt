@@ -1,4 +1,4 @@
 1,ahmed,password,ADMIN
 2,lecturer1,password,LECTURER
-3,student1,password,STUDENT
+3,student1,lol,STUDENT
 4,adham,password,STUDENT
