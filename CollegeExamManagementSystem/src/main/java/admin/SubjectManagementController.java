@@ -108,13 +108,11 @@ public class SubjectManagementController {
             return;
         }
 
-        // Step 1: Select user
         ChoiceDialog<User> userDialog = new ChoiceDialog<>(users.get(0), users);
         userDialog.setTitle("Assign Subjects");
         userDialog.setHeaderText("Select " + role.name());
         userDialog.setContentText("Choose a " + role.name().toLowerCase() + ":");
         
-        // Custom converter to show username
         userDialog.getItems().clear();
         userDialog.getItems().addAll(users);
         
@@ -123,7 +121,6 @@ public class SubjectManagementController {
 
         User selectedUser = userResult.get();
 
-        // Step 2: Select subjects (multi-select)
         List<Subject> allSubjects = subjectManagement.getAllSubjects();
         List<Subject> currentlyAssigned = subjectManagement.getSubjectsByUserId(selectedUser.getId(), role);
 
@@ -135,7 +132,6 @@ public class SubjectManagementController {
         listView.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
         listView.setItems(FXCollections.observableArrayList(allSubjects));
         
-        // Pre-select currently assigned subjects
         for (Subject subject : currentlyAssigned) {
             listView.getSelectionModel().select(subject);
         }

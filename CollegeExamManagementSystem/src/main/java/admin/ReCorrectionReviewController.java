@@ -61,7 +61,6 @@ public class ReCorrectionReviewController {
 
         loadRequests();
 
-        // Show reason when request is selected
         requestsTable.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
             if (newSelection != null) {
                 reasonTextArea.setText("Reason: " + newSelection.getReason());
@@ -74,7 +73,7 @@ public class ReCorrectionReviewController {
         
         ObservableList<RequestEntry> entries = FXCollections.observableArrayList();
         for (ReCorrectionRequest req : allRequests) {
-            // Find student, exam, and grade details
+
             User student = userManagement.getAllUsers().stream()
                     .filter(u -> u.getId().equals(req.getStudentId()))
                     .findFirst()
@@ -124,7 +123,6 @@ public class ReCorrectionReviewController {
             return;
         }
 
-        // Get admin comment
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Approve Request");
         dialog.setHeaderText("Provide a comment (optional)");
@@ -157,7 +155,6 @@ public class ReCorrectionReviewController {
             return;
         }
 
-        // Get admin comment
         TextInputDialog dialog = new TextInputDialog();
         dialog.setTitle("Reject Request");
         dialog.setHeaderText("Provide a reason for rejection");

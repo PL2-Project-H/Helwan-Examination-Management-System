@@ -17,8 +17,6 @@ public class ExamManagement {
     private static final String EXAMS_FILE = "exams.txt";
     private static final String QUESTIONS_FILE = "questions.txt";
 
-    // --- Exam CRUD ---
-
     public List<Exam> getAllExams() {
         List<String> lines = FileHandler.readAllLines(EXAMS_FILE);
         return lines.stream()
@@ -61,7 +59,7 @@ public class ExamManagement {
         exams.removeIf(e -> e.getExamId().equals(examId));
         saveExams(exams);
 
-        // Also delete all questions associated with this exam
+
         List<Question> questions = getAllQuestions();
         questions.removeIf(q -> q.getExamId().equals(examId));
         saveQuestions(questions);
@@ -95,7 +93,6 @@ public class ExamManagement {
                 String.valueOf(exam.getDurationInMinutes()));
     }
 
-    // --- Question CRUD ---
 
     public List<Question> getAllQuestions() {
         List<String> lines = FileHandler.readAllLines(QUESTIONS_FILE);

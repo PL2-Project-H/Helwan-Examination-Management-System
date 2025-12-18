@@ -78,7 +78,7 @@ public class ExamManagementController {
                         examManagement.addExam(newExam);
                         loadExams();
                     } catch (NumberFormatException e) {
-                        // Handle invalid duration input
+                    
                     }
                 }
             }
@@ -115,7 +115,7 @@ public class ExamManagementController {
                             examManagement.updateExam(selectedExam);
                             loadExams();
                         } catch (NumberFormatException e) {
-                            // Handle invalid duration input
+                        
                         }
                     }
                 }
